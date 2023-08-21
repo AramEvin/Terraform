@@ -1,15 +1,14 @@
-terraform {
-  cloud {
-    organization = "AramEvin"
+#Simple Terraform file
 
-    workspaces {
-      name = "terraform"
-    }
-  }
+terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+      source = "hashicorp/aws"
+      version = "5.13.1"
     }
   }
+}
+
+provider "aws" {
+  profile    = "default"
 }
