@@ -3,6 +3,12 @@ variable "username" {
   default = "ec2-user"
 }
 
+variable "sg_ports" {
+  type        = list(number)
+  description = "list of ingress ports"
+  default     = [80, 22, 8080]
+}
+
 output "instance_username" {
   description = "default username linux"
   value       = var.username
